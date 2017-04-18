@@ -1,0 +1,1057 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/js-dxtools/webpack-validator#readme"
+
+    >webpack-validator (v3.0.0)</a>
+</h1>
+<h4>Validate your webpack config with joi</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webpack-validator">module webpack-validator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.webpack-validator">
+            function <span class="apidocSignatureSpan"></span>webpack-validator
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.toString">
+            function <span class="apidocSignatureSpan">webpack-validator.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.validateRoot">
+            function <span class="apidocSignatureSpan">webpack-validator.</span>validateRoot
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.</span>Joi</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.webpack-validator.Joi">module webpack-validator.Joi</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">webpack-validator.Joi.</span>isJoi</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.alt">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>alt
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.alternatives">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>alternatives
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.any">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>any
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.array">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>array
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.assert">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>assert
+            <span class="apidocSignatureSpan">(value, schema, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.attempt">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>attempt
+            <span class="apidocSignatureSpan">(value, schema, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.binary">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>binary
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.bool">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>bool
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.boolean">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>boolean
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.compile">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>compile
+            <span class="apidocSignatureSpan">(schema)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.date">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>date
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.describe">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>describe
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.extend">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>extend
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.func">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>func
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.isRef">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>isRef
+            <span class="apidocSignatureSpan">(ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.number">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>number
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.object">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>object
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.reach">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>reach
+            <span class="apidocSignatureSpan">(schema, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.ref">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>ref
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.string">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>string
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.Joi.validate">
+            function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>validate
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_description</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_examples</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_flags</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_inner</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_invalids</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_meta</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_notes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_refs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_settings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_tags</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_tests</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_unit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_valids</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">webpack-validator.Joi.</span>_type</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webpack-validator" id="apidoc.module.webpack-validator">module webpack-validator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.webpack-validator" id="apidoc.element.webpack-validator.webpack-validator">
+        function <span class="apidocSignatureSpan"></span>webpack-validator
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validate(config) {
+  var options = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : {};
+  var returnValidation = options.returnValidation,
+      overrideSchema = options.schema,
+      schemaExtension = options.schemaExtension,
+      rules = options.rules;
+
+  throwForWebpack2();
+
+  var schemaOptions = (0, _merge3.default)(defaultSchemaOptions, { rules: rules });
+
+  var schema = overrideSchema || makeSchema(schemaOptions, schemaExtension);
+
+  var validationResult = _joi2.default.validate(config, schema, { abortEarly: false });
+  validationResult.schemaOptions = schemaOptions; // Mainly for having sth to assert on right now
+
+  if (returnValidation) return validationResult;
+
+  if (validationResult.error) {
+    console.error(validationResult.error.annotate());
+    process.exit(1);
+  }
+
+  return config;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.toString" id="apidoc.element.webpack-validator.toString">
+        function <span class="apidocSignatureSpan">webpack-validator.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.validateRoot" id="apidoc.element.webpack-validator.validateRoot">
+        function <span class="apidocSignatureSpan">webpack-validator.</span>validateRoot
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function validateRoot(config) {
+  var options = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : {};
+  var quiet = options.quiet;
+
+
+  var validationResult = void 0,
+      multiValidationResults = void 0;
+
+  if (Array.isArray(config)) {
+    multiValidationResults = [];
+    config.forEach(function (cfg) {
+      multiValidationResults.push(validate(cfg, options));
+    });
+  } else {
+    validationResult = validate(config, options);
+  }
+
+  if (!quiet) {
+    console.info(_chalk2.default.green(&#x27;[webpack-validator] Config is valid.&#x27;));
+  }
+
+  return validationResult || multiValidationResults;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.webpack-validator.Joi" id="apidoc.module.webpack-validator.Joi">module webpack-validator.Joi</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.alt" id="apidoc.element.webpack-validator.Joi.alt">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>alt
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alt = function () {
+
+    return arguments.length ? internals.alternatives.try.apply(internals.alternatives, arguments) : internals.alternatives;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.alternatives" id="apidoc.element.webpack-validator.Joi.alternatives">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>alternatives
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">alternatives = function () {
+
+    return arguments.length ? internals.alternatives.try.apply(internals.alternatives, arguments) : internals.alternatives;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.any" id="apidoc.element.webpack-validator.Joi.any">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>any
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">any = function () {
+
+    return any;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+const validate = require(&#x27;webpack-validator&#x27;)
+const Joi = require(&#x27;webpack-validator&#x27;).Joi
+
+// This joi schema will be `Joi.concat`-ed with the internal schema
+const yourSchemaExtension = Joi.object({
+  // this would just allow the property and doesn&#x27;t perform any additional validation
+  eslint: Joi.<span class="apidocCodeKeywordSpan">any</span>()
+})
+
+const config = { /* ... your webpack config */ }
+
+module.exports = validate(config, { schemaExtension: yourSchemaExtension })
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.array" id="apidoc.element.webpack-validator.Joi.array">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>array
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">array = function () {
+
+    return internals.array;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.assert" id="apidoc.element.webpack-validator.Joi.assert">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>assert
+        <span class="apidocSignatureSpan">(value, schema, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">assert = function (value, schema, message) {
+
+    root.attempt(value, schema, message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.attempt" id="apidoc.element.webpack-validator.Joi.attempt">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>attempt
+        <span class="apidocSignatureSpan">(value, schema, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">attempt = function (value, schema, message) {
+
+    const result = root.validate(value, schema);
+    const error = result.error;
+    if (error) {
+        if (!message) {
+            error.message = error.annotate();
+            throw error;
+        }
+
+        if (!(message instanceof Error)) {
+            error.message = message + &#x27; &#x27; + error.annotate();
+            throw error;
+        }
+
+        throw message;
+    }
+
+    return result.value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.binary" id="apidoc.element.webpack-validator.Joi.binary">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>binary
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">binary = function () {
+
+    return internals.binary;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.bool" id="apidoc.element.webpack-validator.Joi.bool">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>bool
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bool = function () {
+
+    return internals.boolean;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.boolean" id="apidoc.element.webpack-validator.Joi.boolean">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>boolean
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">boolean = function () {
+
+    return internals.boolean;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.compile" id="apidoc.element.webpack-validator.Joi.compile">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>compile
+        <span class="apidocSignatureSpan">(schema)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (schema) {
+
+    try {
+        return Cast.schema(schema);
+    }
+    catch (err) {
+        if (err.hasOwnProperty(&#x27;path&#x27;)) {
+            err.message = err.message + &#x27;(&#x27; + err.path + &#x27;)&#x27;;
+        }
+        throw err;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.date" id="apidoc.element.webpack-validator.Joi.date">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>date
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">date = function () {
+
+    return internals.date;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.describe" id="apidoc.element.webpack-validator.Joi.describe">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>describe
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">describe = function () {
+
+    const schema = arguments.length ? root.compile(arguments[0]) : any;
+    return schema.describe();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.extend" id="apidoc.element.webpack-validator.Joi.extend">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>extend
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function () {
+
+    const extensions = Hoek.flatten(Array.prototype.slice.call(arguments));
+    Hoek.assert(extensions.length &#x3e; 0, &#x27;You need to provide at least one extension&#x27;);
+
+    this.assert(extensions, internals.extensionsSchema);
+
+    const joi = Object.assign({}, this);
+
+    for (let i = 0; i &#x3c; extensions.length; ++i) {
+        const extension = extensions[i];
+        const base = (extension.base || this.any()).clone(); // Cloning because we&#x27;re going to override language afterwards
+        const ctor = base.constructor;
+        const type = function () { // eslint-disable-line no-loop-func
+
+            ctor.call(this);
+
+            if (extension.base) {
+                Object.assign(this, base);
+            }
+
+            this._type = extension.name;
+
+            if (extension.language) {
+                this._settings = this._settings || { language: {} };
+                this._settings.language = Hoek.applyToDefaults(this._settings.language, {
+                    [extension.name]: extension.language
+                });
+            }
+        };
+        Hoek.inherits(type, ctor);
+
+        if (extension.pre) {
+            type.prototype._base = function (value, state, options) {
+
+                if (ctor.prototype._base) {
+                    const baseRet = ctor.prototype._base.call(this, value, state, options);
+
+                    if (baseRet.errors) {
+                        return baseRet;
+                    }
+
+                    value = baseRet.value;
+                }
+
+                const ret = extension.pre.call(this, value, state, options);
+                if (ret &#x26;&#x26; ret.isJoi) {
+                    return { value, errors: ret };
+                }
+                else if (ret !== null) {
+                    return { value: ret };
+                }
+
+                return { value };
+            };
+        }
+
+        if (extension.rules) {
+            for (let j = 0; j &#x3c; extension.rules.length; ++j) {
+                const rule = extension.rules[j];
+                const ruleArgs = rule.params ?
+                    (rule.params instanceof Any ? rule.params._inner.children.map((k) =&#x3e; k.key) : Object.keys(rule.params)) :
+                    [];
+                const validateArgs = rule.params ? Cast.schema(rule.params) : null;
+
+                type.prototype[rule.name] = function () { // eslint-disable-line no-loop-func
+
+                    if (arguments.length &#x3e; ruleArgs.length) {
+                        throw new Error(&#x27;Unexpected number of arguments&#x27;);
+                    }
+
+                    const args = Array.prototype.slice.call(arguments);
+                    let hasRef = false;
+                    const arg = {};
+
+                    for (let k = 0; k &#x3c; ruleArgs.length; ++k) {
+                        arg[ruleArgs[k]] = args[k];
+                        if (!hasRef &#x26;&#x26; Ref.isRef(args[k])) {
+                            hasRef = true;
+                        }
+                    }
+
+                    if (validateArgs) {
+                        joi.assert(arg, validateArgs);
+                    }
+
+                    let schema;
+                    if (rule.validate) {
+                        const validate = rule.validate.bind(this, arg);
+
+                        schema = this._test(rule.name, arg, validate, {
+                            description: rule.description,
+                            hasRef
+                        });
+                    }
+                    else {
+                        schema = this.clone();
+                    }
+
+                    if (rule.setup) {
+                        rule.setup.call(schema, arg);
+                    }
+
+                    return schema;
+                };
+            }
+        }
+
+        if (extension.describe) {
+            type.prototype.describe = function () {
+
+                const description = ctor.prototype.describe.call(this);
+                return extension.describe.call(this, description);
+            };
+        }
+
+        const instance = new type();
+        joi[extension.name] = function () {
+
+            return instance; ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.func" id="apidoc.element.webpack-validator.Joi.func">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>func
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">func = function () {
+
+    return internals.object._func();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.isRef" id="apidoc.element.webpack-validator.Joi.isRef">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>isRef
+        <span class="apidocSignatureSpan">(ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isRef = function (ref) {
+
+    return Ref.isRef(ref);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.number" id="apidoc.element.webpack-validator.Joi.number">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>number
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">number = function () {
+
+    return internals.number;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.object" id="apidoc.element.webpack-validator.Joi.object">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>object
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">object = function () {
+
+    return arguments.length ? internals.object.keys.apply(internals.object, arguments) : internals.object;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you need to extend the schema, for example for custom top level properties or properties added by third party plugins like `eslint
+-loader` (which adds a toplevel `eslint` property), do it like this:
+
+```js
+const validate = require(&#x27;webpack-validator&#x27;)
+const Joi = require(&#x27;webpack-validator&#x27;).Joi
+
+// This joi schema will be `Joi.concat`-ed with the internal schema
+const yourSchemaExtension = Joi.<span class="apidocCodeKeywordSpan">object</span>({
+  // this would just allow the property and doesn&#x27;t perform any additional validation
+  eslint: Joi.any()
+})
+
+const config = { /* ... your webpack config */ }
+
+module.exports = validate(config, { schemaExtension: yourSchemaExtension })
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.reach" id="apidoc.element.webpack-validator.Joi.reach">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>reach
+        <span class="apidocSignatureSpan">(schema, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reach = function (schema, path) {
+
+    Hoek.assert(schema &#x26;&#x26; schema.isJoi, &#x27;you must provide a joi schema&#x27;);
+    Hoek.assert(typeof path === &#x27;string&#x27;, &#x27;path must be a string&#x27;);
+
+    if (path === &#x27;&#x27;) {
+        return schema;
+    }
+
+    const parts = path.split(&#x27;.&#x27;);
+    const children = schema._inner.children;
+    if (!children) {
+        return;
+    }
+
+    const key = parts[0];
+    for (let i = 0; i &#x3c; children.length; ++i) {
+        const child = children[i];
+        if (child.key === key) {
+            return this.reach(child.schema, path.substr(key.length + 1));
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.ref" id="apidoc.element.webpack-validator.Joi.ref">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>ref
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ref = function () {
+
+    return Ref.create.apply(null, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.string" id="apidoc.element.webpack-validator.Joi.string">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>string
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">string = function () {
+
+    return internals.string;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.webpack-validator.Joi.validate" id="apidoc.element.webpack-validator.Joi.validate">
+        function <span class="apidocSignatureSpan">webpack-validator.Joi.</span>validate
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (value) {
+
+    const last = arguments[arguments.length - 1];
+    const callback = typeof last === &#x27;function&#x27; ? last : null;
+
+    const count = arguments.length - (callback ? 1 : 0);
+    if (count === 1) {
+        return any.validate(value, callback);
+    }
+
+    const options = count === 3 ? arguments[2] : {};
+    const schema = root.compile(arguments[1]);
+
+    return schema._validateWithOptions(value, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
