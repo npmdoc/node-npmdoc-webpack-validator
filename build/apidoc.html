@@ -72,15 +72,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.toString">
-            function <span class="apidocSignatureSpan">webpack-validator.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.webpack-validator.validateRoot">
             function <span class="apidocSignatureSpan">webpack-validator.</span>validateRoot
             <span class="apidocSignatureSpan">(config)</span>
@@ -423,21 +414,6 @@
 
 
     <h2>
-        <a href="#apidoc.element.webpack-validator.toString" id="apidoc.element.webpack-validator.toString">
-        function <span class="apidocSignatureSpan">webpack-validator.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
         <a href="#apidoc.element.webpack-validator.validateRoot" id="apidoc.element.webpack-validator.validateRoot">
         function <span class="apidocSignatureSpan">webpack-validator.</span>validateRoot
         <span class="apidocSignatureSpan">(config)</span>
@@ -508,7 +484,24 @@
 
     return arguments.length ? internals.alternatives.try.apply(internals.alternatives, arguments) : internals.alternatives;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+info: _joi2.default.boolean(),
+quiet: _joi2.default.boolean(),
+https: _joi2.default.boolean(),
+key: _joi2.default.binary(),
+cert: _joi2.default.binary(),
+ca: [_joi2.default.binary(), _joi2.default.array().items(_joi2.default.binary())],
+contentBase: [_joi2.default.object(), _joi2.default.array(), _joi2.default.string()],
+historyApiFallback: _joi2.default.<span class="apidocCodeKeywordSpan">alternatives</span>().try([_joi2.default.object(), _joi2.default
+.boolean()]),
+compress: _joi2.default.boolean(),
+port: _joi2.default.number(),
+public: _joi2.default.string(),
+host: _joi2.default.string(),
+publicPath: _types.urlPart,
+outputPath: _types.urlPart,
+filename: _types.notAbsolutePath,
+...</pre></li>
     </ul>
 
 
@@ -555,7 +548,22 @@ module.exports = validate(config, { schemaExtension: yourSchemaExtension })
 
     return internals.array;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+profile: _joi2.default.boolean(),
+progress: _joi2.default.boolean(),
+recordsInputPath: _types.looksLikeAbsolutePath,
+recordsOutputPath: _types.looksLikeAbsolutePath,
+recordsPath: _types.looksLikeAbsolutePath,
+resolve: resolveSchema,
+resolveLoader: resolveSchema.concat(_joi2.default.object({
+  moduleTemplates: _joi2.default.<span class="apidocCodeKeywordSpan">array</span>().items(_joi2.default.string())
+})),
+watch: _joi2.default.boolean(),
+watchOptions: _watchOptions2.default,
+performance: _performance2.default,
+stats: _joi2.default.any(), // TODO
+target: _joi2.default.any(), // TODO
+...</pre></li>
     </ul>
 
 
@@ -619,7 +627,23 @@ module.exports = validate(config, { schemaExtension: yourSchemaExtension })
 
     return internals.binary;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+lazy: _joi2.default.boolean(),
+inline: _joi2.default.boolean(),
+stdin: _joi2.default.boolean(),
+open: _joi2.default.boolean(),
+info: _joi2.default.boolean(),
+quiet: _joi2.default.boolean(),
+https: _joi2.default.boolean(),
+key: _joi2.default.<span class="apidocCodeKeywordSpan">binary</span>(),
+cert: _joi2.default.binary(),
+ca: [_joi2.default.binary(), _joi2.default.array().items(_joi2.default.binary())],
+contentBase: [_joi2.default.object(), _joi2.default.array(), _joi2.default.string()],
+historyApiFallback: _joi2.default.alternatives().try([_joi2.default.object(), _joi2.default.boolean()]),
+compress: _joi2.default.boolean(),
+port: _joi2.default.number(),
+public: _joi2.default.string(),
+...</pre></li>
     </ul>
 
 
@@ -635,7 +659,23 @@ module.exports = validate(config, { schemaExtension: yourSchemaExtension })
 
     return internals.boolean;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  language: {
+absolute: MESSAGE
+  },
+  rules: [{
+name: &#x27;absolute&#x27;,
+
+params: {
+  checkForExistence: _joi2.default.<span class="apidocCodeKeywordSpan">bool</span>()
+},
+
+validate: function validate(params, value, state, options) {
+  var looksLikeAbsolutePath = /^(?!\.?\.\/).+$/.test(value);
+  var directoryExists = params.checkForExistence === false ? true : _shelljs2.default.test(&#x27;-d&#x27;, value);
+  if (!looksLikeAbsolutePath || !directoryExists) {
+    return this.createError(&#x27;path.absolute&#x27;, {
+...</pre></li>
     </ul>
 
 
@@ -651,7 +691,23 @@ module.exports = validate(config, { schemaExtension: yourSchemaExtension })
 
     return internals.boolean;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+function makeSchema(schemaOptions, schemaExtension) {
+var resolveSchema = (0, _resolve2.default)(schemaOptions);
+var moduleSchema = (0, _module2.default)(schemaOptions);
+
+var schema = _joi2.default.object({
+  amd: _joi2.default.object(),
+  bail: _joi2.default.<span class="apidocCodeKeywordSpan">boolean</span>(),
+  cache: _joi2.default.boolean(),
+  context: _context2.default,
+  debug: _joi2.default.boolean(),
+  devServer: _devServer2.default,
+  devtool: _devtool2.default,
+  entry: _entry2.default,
+  externals: _externals2.default,
+...</pre></li>
     </ul>
 
 
@@ -840,7 +896,25 @@ module.exports = validate(config, { schemaExtension: yourSchemaExtension })
         joi[extension.name] = function () {
 
             return instance; ...</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// TODO: Refactor this to use webpacks `modulesDirectories` somehow
+var files = (0, _shelljs.ls)(dir + &#x27;/*{.json,.js,.jsx,.ts}&#x27;);
+var folders = (0, _shelljs.ls)(&#x27;-d&#x27;, dir + &#x27;/*/&#x27;);
+var both = [].concat(_toConsumableArray(files), _toConsumableArray(folders));
+return new Set(both.map(basenameCached));
+});
+
+var customJoi = _joi2.default.<span class="apidocCodeKeywordSpan">extend</span>({
+base: _joi2.default.string(),
+name: &#x27;path&#x27;,
+language: {
+  noRootFilesNodeModulesNameClash: &#x27;\n\nWhen looking at files/folders in the root path &#x22;{{path}}&#x22;,\n&#x27; + &#x27
+;I found out that there are files/folders that name clash with &#x27; + &#x27;dependencies in your node_modules ({{nodeModuleFolder
+}}).\n&#x27; + &#x27;The clashing files/folders (extensions removed) are: {{conflictingFiles}}.\n&#x27; + &#x27;This can lead to hard to debug errors, where you for example have &#x27; + &#x27;a folder &#x22;$rootDir/redux&#x22;, then `require(&#x22;redux&#x22;)` and, instead of resolving &#x27; + &#x27;the npm package &#x22;redux&#x22;, *the folder &#x22;$rootDir/redux&#x22; is resolved.*\n&#x27; + &#x27;SOLUTION: rename the clashing files/folders.\n\n&#x27;
+},
+rules: [{
+  name: &#x27;noRootFilesNodeModulesNameClash&#x27;,
+...</pre></li>
     </ul>
 
 
@@ -856,7 +930,21 @@ module.exports = validate(config, { schemaExtension: yourSchemaExtension })
 
     return internals.object._func();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  watchOptions: _watchOptions2.default,
+  hot: _joi2.default.boolean(),
+  stats: _joi2.default.alternatives().try([_joi2.default.object(), _joi2.default.string().valid([&#x27;none&#x27;, &#x27;errors-
+only&#x27;, &#x27;minimal&#x27;, &#x27;normal&#x27;, &#x27;verbose&#x27;])]),
+  logLevel: _joi2.default.string().valid([&#x27;debug&#x27;, &#x27;info&#x27;, &#x27;warn&#x27;, &#x27;error&#x27;, &#x27;silent
+&#x27;]),
+  localAddress: _joi2.default.string().regex(/.*:[0-9]+/),
+  noInfo: _joi2.default.boolean(),
+  proxy: [_joi2.default.object(), _joi2.default.array(), _joi2.default.string()],
+  setup: _joi2.default.<span class="apidocCodeKeywordSpan">func</span>().arity(1),
+  staticOptions: _joi2.default.object(),
+  headers: _joi2.default.object()
+});
+...</pre></li>
     </ul>
 
 
@@ -888,7 +976,23 @@ module.exports = validate(config, { schemaExtension: yourSchemaExtension })
 
     return internals.number;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+https: _joi2.default.boolean(),
+key: _joi2.default.binary(),
+cert: _joi2.default.binary(),
+ca: [_joi2.default.binary(), _joi2.default.array().items(_joi2.default.binary())],
+contentBase: [_joi2.default.object(), _joi2.default.array(), _joi2.default.string()],
+historyApiFallback: _joi2.default.alternatives().try([_joi2.default.object(), _joi2.default.boolean()]),
+compress: _joi2.default.boolean(),
+port: _joi2.default.<span class="apidocCodeKeywordSpan">number</span>(),
+public: _joi2.default.string(),
+host: _joi2.default.string(),
+publicPath: _types.urlPart,
+outputPath: _types.urlPart,
+filename: _types.notAbsolutePath,
+watchOptions: _watchOptions2.default,
+hot: _joi2.default.boolean(),
+...</pre></li>
     </ul>
 
 
@@ -988,7 +1092,22 @@ module.exports = validate(config, { schemaExtension: yourSchemaExtension })
 
     return internals.string;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+profile: _joi2.default.boolean(),
+progress: _joi2.default.boolean(),
+recordsInputPath: _types.looksLikeAbsolutePath,
+recordsOutputPath: _types.looksLikeAbsolutePath,
+recordsPath: _types.looksLikeAbsolutePath,
+resolve: resolveSchema,
+resolveLoader: resolveSchema.concat(_joi2.default.object({
+  moduleTemplates: _joi2.default.array().items(_joi2.default.<span class="apidocCodeKeywordSpan">string</span>())
+})),
+watch: _joi2.default.boolean(),
+watchOptions: _watchOptions2.default,
+performance: _performance2.default,
+stats: _joi2.default.any(), // TODO
+target: _joi2.default.any(), // TODO
+...</pre></li>
     </ul>
 
 
@@ -1015,7 +1134,23 @@ module.exports = validate(config, { schemaExtension: yourSchemaExtension })
 
     return schema._validateWithOptions(value, options, callback);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+throwForWebpack2();
+
+var schemaOptions = (0, _merge3.default)(defaultSchemaOptions, { rules: rules });
+
+var schema = overrideSchema || makeSchema(schemaOptions, schemaExtension);
+
+var validationResult = _joi2.default.<span class="apidocCodeKeywordSpan">validate</span>(config, schema, { abortEarly: false });
+validationResult.schemaOptions = schemaOptions; // Mainly for having sth to assert on right now
+
+if (returnValidation) return validationResult;
+
+if (validationResult.error) {
+  console.error(validationResult.error.annotate());
+  process.exit(1);
+...</pre></li>
     </ul>
 
 
