@@ -1,6 +1,6 @@
 # npmdoc-webpack-validator
 
-#### api documentation for  [webpack-validator (v3.0.0)](https://github.com/js-dxtools/webpack-validator#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-webpack-validator.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-webpack-validator) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-webpack-validator.svg)](https://travis-ci.org/npmdoc/node-npmdoc-webpack-validator)
+#### basic api documentation for  [webpack-validator (v3.0.0)](https://github.com/js-dxtools/webpack-validator#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-webpack-validator.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-webpack-validator) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-webpack-validator.svg)](https://travis-ci.org/npmdoc/node-npmdoc-webpack-validator)
 
 #### Validate your webpack config with joi
 
